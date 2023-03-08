@@ -11,7 +11,7 @@ outerLoop:
     while (true)
     {
         Console.WriteLine("\nChoose gender (Male/Female):");
-    string gender_choice = Console.ReadLine();
+    string gender_choice = Console.ReadLine().ToLower();
 
     innerLoop:
     while(true)
@@ -27,7 +27,7 @@ outerLoop:
 
         int RandomAge = rand.Next(18, 30);
 
-        if (gender_choice == "Male")
+        if (gender_choice == "male")
         {
             Console.WriteLine
                 ("\nName: " + Random_maleNames + "\n" +
@@ -43,10 +43,9 @@ outerLoop:
             } else
             {
                 return;
-                //Environment.Exit(0);
             }
         }
-        else if (gender_choice == "Female")
+        else if (gender_choice == "female")
         {
             Console.WriteLine
                 ("\nName: " + Random_femaleNames + "\n" +
@@ -62,7 +61,6 @@ outerLoop:
             } else
             {
                 return;
-                //Environment.Exit(0);
             }
 
         } else
