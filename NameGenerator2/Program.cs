@@ -13,11 +13,31 @@ while (true)
     Console.WriteLine("\nChoose gender (Male/Female):");
     string gender_choice = Console.ReadLine().ToLower();
 
+    if (gender_choice != "male" && gender_choice != "female")
+    {
+        Console.WriteLine("\nIncorrect gender.");
+        Thread.Sleep(1000);
+    }
+    else
+    {
+        GeneratePerson(gender_choice); 
+    }
+}
+
+string GenerateSurname(Random rand)
+{
+    int RandomIndex_surnames = rand.Next(surnames.Length);
+    string Random_surnames = surnames[RandomIndex_surnames];
+
+    return Random_surnames;
+}
+
+
+void GeneratePerson(string gender_choice)
+{
     while (true)
     {
-        int RandomIndex_surnames = rand.Next(surnames.Length);
-        string Random_surnames = surnames[RandomIndex_surnames];
-
+        string Random_surnames = GenerateSurname(rand);
         int RandomAge = rand.Next(18, 30);
 
         if (gender_choice == "male")
@@ -40,12 +60,6 @@ while (true)
                 "Surname: " + Random_surnames + "\n" +
                 "Age: " + RandomAge);
         }
-        else
-        {
-            Console.WriteLine("\nIncorrect gender.");
-            break;
-        }
-        Thread.Sleep(1000);
 
 
         Console.WriteLine("\nDo you want to generate again?");
