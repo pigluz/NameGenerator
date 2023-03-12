@@ -7,10 +7,10 @@ Random rand = new Random();
 Console.WriteLine("Name generator");
 Thread.Sleep(1000);
 
-outerLoop:
-    while (true)
-    {
-        Console.WriteLine("\nChoose gender (Male/Female):");
+
+while (true)
+{
+    Console.WriteLine("\nChoose gender (Male/Female):");
     string gender_choice = Console.ReadLine();
 
     while (true)
@@ -31,16 +31,6 @@ outerLoop:
                 "Age: " + RandomAge);
             Thread.Sleep(1000);
             Console.WriteLine("\nDo you want to generate again?");
-            string anotherGenerate_choice = Console.ReadLine();
-
-            if (anotherGenerate_choice == "Yes")
-            {
-                goto innerLoop;
-            } else
-            {
-                return;
-                //Environment.Exit(0);
-            }
         }
         else if (gender_choice == "Female")
         {
@@ -53,20 +43,12 @@ outerLoop:
                 "Age: " + RandomAge);
             Thread.Sleep(1000);
             Console.WriteLine("\nDo you want to generate again?");
-            string anotherGenerate_choice = Console.ReadLine();
 
-            if (anotherGenerate_choice == "Yes")
-            {
-                goto innerLoop;
-            } else
-            {
-                return;
-                //Environment.Exit(0);
-            }
 
-        if (generateInput == "no")
-        {
-            break;
+            //if (generateInput == "no")
+            //{
+            //    break;
+            //}
         }
     }
 }
