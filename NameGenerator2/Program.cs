@@ -7,11 +7,11 @@ Random rand = new Random();
 Console.WriteLine("Name generator");
 Thread.Sleep(1000);
 
-
-while (true)
-{
-    Console.WriteLine("\nChoose gender (Male/Female):");
-    string gender_choice = Console.ReadLine().ToLower();
+outerLoop:
+    while (true)
+    {
+        Console.WriteLine("\nChoose gender (Male/Female):");
+    string gender_choice = Console.ReadLine();
 
     while (true)
     {
@@ -29,8 +29,20 @@ while (true)
                 ("\nName: " + Random_maleNames + "\n" +
                 "Surname: " + Random_surnames + "\n" +
                 "Age: " + RandomAge);
+            Thread.Sleep(1000);
+            Console.WriteLine("\nDo you want to generate again?");
+            string anotherGenerate_choice = Console.ReadLine();
+
+            if (anotherGenerate_choice == "Yes")
+            {
+                goto innerLoop;
+            } else
+            {
+                return;
+                //Environment.Exit(0);
+            }
         }
-        else if (gender_choice == "female")
+        else if (gender_choice == "Female")
         {
             int RandomIndex_femaleName = rand.Next(femaleNames.Length);
             string Random_femaleNames = femaleNames[RandomIndex_femaleName];
@@ -39,17 +51,18 @@ while (true)
                 ("\nName: " + Random_femaleNames + "\n" +
                 "Surname: " + Random_surnames + "\n" +
                 "Age: " + RandomAge);
-        }
-        else
-        {
-            Console.WriteLine("\nIncorrect gender.");
-            break;
-        }
-        Thread.Sleep(1000);
+            Thread.Sleep(1000);
+            Console.WriteLine("\nDo you want to generate again?");
+            string anotherGenerate_choice = Console.ReadLine();
 
-
-        Console.WriteLine("\nDo you want to generate again?");
-        string generateInput = Console.ReadLine().ToLower();
+            if (anotherGenerate_choice == "Yes")
+            {
+                goto innerLoop;
+            } else
+            {
+                return;
+                //Environment.Exit(0);
+            }
 
         if (generateInput == "no")
         {
