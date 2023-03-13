@@ -46,9 +46,7 @@ void GeneratePerson(string genderChoice)
             string randomMaleNames = maleNames[randomIndexMaleNames];
 
             Console.WriteLine
-                ("\nName: " + randomMaleNames + "\n" +
-                "Surname: " + randomSurnames + "\n" +
-                "Age: " + randomAge);
+                ($"\nName: {randomMaleNames}\nSurname: {randomSurnames}\nAge: {randomAge}");
         }
         else if (genderChoice == "female")
         {
@@ -56,18 +54,15 @@ void GeneratePerson(string genderChoice)
             string randomFemaleNames = femaleNames[randomIndexFemaleName];
 
             Console.WriteLine
-                ("\nName: " + randomFemaleNames + "\n" +
-                "Surname: " + randomSurnames + "\n" +
-                "Age: " + randomAge);
-        }
+                ($"\nName: {randomFemaleNames}\nSurname: {randomSurnames}\nAge: {randomAge}");
 
+            Console.WriteLine("\nDo you want to generate again?");
+            string generateInput = Console.ReadLine().ToLower();
 
-        Console.WriteLine("\nDo you want to generate again?");
-        string generateInput = Console.ReadLine().ToLower();
-
-        if (generateInput == "no")
-        {
-            break;
+            if (generateInput == "no")
+            {
+                break;
+            }
         }
     }
 }
