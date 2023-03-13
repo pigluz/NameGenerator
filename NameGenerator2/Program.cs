@@ -11,54 +11,54 @@ Thread.Sleep(1000);
 while (true)
 {
     Console.WriteLine("\nChoose gender (Male/Female):");
-    string gender_choice = Console.ReadLine().ToLower();
+    string genderChoice = Console.ReadLine().ToLower();
 
-    if (gender_choice != "male" && gender_choice != "female")
+    if (genderChoice != "male" && genderChoice != "female")
     {
         Console.WriteLine("\nIncorrect gender.");
         Thread.Sleep(1000);
     }
     else
     {
-        GeneratePerson(gender_choice); 
+        GeneratePerson(genderChoice); 
     }
 }
 
 string GenerateSurname(Random rand)
 {
-    int RandomIndex_surnames = rand.Next(surnames.Length);
-    string Random_surnames = surnames[RandomIndex_surnames];
+    int randomIndexSurnames = rand.Next(surnames.Length);
+    string randomSurnames = surnames[randomIndexSurnames];
 
-    return Random_surnames;
+    return randomSurnames;
 }
 
 
-void GeneratePerson(string gender_choice)
+void GeneratePerson(string genderChoice)
 {
     while (true)
     {
-        string Random_surnames = GenerateSurname(rand);
-        int RandomAge = rand.Next(18, 30);
+        string randomSurnames = GenerateSurname(rand);
+        int randomAge = rand.Next(18, 30);
 
-        if (gender_choice == "male")
+        if (genderChoice == "male")
         {
-            int RandomIndex_maleNames = rand.Next(maleNames.Length);
-            string Random_maleNames = maleNames[RandomIndex_maleNames];
+            int randomIndexMaleNames = rand.Next(maleNames.Length);
+            string randomMaleNames = maleNames[randomIndexMaleNames];
 
             Console.WriteLine
-                ("\nName: " + Random_maleNames + "\n" +
-                "Surname: " + Random_surnames + "\n" +
-                "Age: " + RandomAge);
+                ("\nName: " + randomMaleNames + "\n" +
+                "Surname: " + randomSurnames + "\n" +
+                "Age: " + randomAge);
         }
-        else if (gender_choice == "female")
+        else if (genderChoice == "female")
         {
-            int RandomIndex_femaleName = rand.Next(femaleNames.Length);
-            string Random_femaleNames = femaleNames[RandomIndex_femaleName];
+            int randomIndexFemaleName = rand.Next(femaleNames.Length);
+            string randomFemaleNames = femaleNames[randomIndexFemaleName];
 
             Console.WriteLine
-                ("\nName: " + Random_femaleNames + "\n" +
-                "Surname: " + Random_surnames + "\n" +
-                "Age: " + RandomAge);
+                ("\nName: " + randomFemaleNames + "\n" +
+                "Surname: " + randomSurnames + "\n" +
+                "Age: " + randomAge);
         }
 
 
