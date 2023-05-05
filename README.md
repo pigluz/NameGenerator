@@ -1,4 +1,5 @@
-# NameGenerator
-### A simple console-based program made in c#
+# Name Generator
+C# program that gives user a random name, surname and their age based of an array. 
+
 ![obraz](https://user-images.githubusercontent.com/119127477/223548608-227f8165-54af-46c2-82e5-ea47d2b64391.png)
 ###### 07.03.2023
